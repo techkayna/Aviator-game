@@ -26,7 +26,7 @@ SCREEN_HEIGHT = 600         # Esta define a altura
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super(Player, self).__init__()
-        self.surf = pygame.image.load("jet.png").convert()    # define a área do objeto jogador como superfície surf
+        self.surf = pygame.image.load("./Images/jet.png").convert()    # define a área do objeto jogador como superfície surf
         self.surf.set_colorkey((255, 255, 255), RLEACCEL)     # define a cor do fundo dessa área
         self.rect = self.surf.get_rect()   # salva essa informação na variável rect
 
@@ -58,7 +58,7 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super(Enemy, self).__init__()
-        self.surf = pygame.image.load("missile.png").convert()
+        self.surf = pygame.image.load("./Images/missile.png").convert()
         self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.rect = self.surf.get_rect(
             center=(
@@ -78,13 +78,13 @@ class Enemy(pygame.sprite.Sprite):
 pygame.mixer.init()
 
 # Reproduza música de fundo
-pygame.mixer.music.load("Apoxode_-_Electric_1.mp3")
+pygame.mixer.music.load("./Music/Apoxode_-_Electric_1.mp3")
 pygame.mixer.music.play(loops=-1)
 
 # Carregue todos os arquivos de som
-move_up_sound = pygame.mixer.Sound("Rising_putter.ogg")
-move_down_sound = pygame.mixer.Sound("Falling_putter.ogg")
-collision_sound = pygame.mixer.Sound("Collision.ogg")
+move_up_sound = pygame.mixer.Sound("./Music/Rising_putter.ogg")
+move_down_sound = pygame.mixer.Sound("./Music/Falling_putter.ogg")
+collision_sound = pygame.mixer.Sound("./Music/Collision.ogg")
 
 # Inicialize o pygame
 pygame.init()
@@ -97,7 +97,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 class Cloud(pygame.sprite.Sprite):
     def __init__(self):
         super(Cloud, self).__init__()
-        self.surf = pygame.image.load("cloud.png").convert()
+        self.surf = pygame.image.load("./Images/cloud.png").convert()
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
 
         # A posição inicial é gerada aleatoriamente
